@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buscaminas.controlador.FXMLMenuPrincipalController">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="480.0" prefWidth="640.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ListView prefHeight="471.0" prefWidth="186.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Button layoutX="70.0" layoutY="130.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="120.0" text="8x8" />
+                  <Button layoutX="213.0" layoutY="130.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="120.0" text="16x16" />
+                  <Button layoutX="70.0" layoutY="259.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="120.0" text="30x16" />
+                  <Button layoutX="213.0" layoutY="259.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="120.0" text="Personalizado" />
+                  <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="366.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Escritorio/proyecto/buscamina/jugador.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="309.0" layoutY="26.0" text="intel32">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="328.0" layoutY="44.0" text="8400">
+                     <font>
+                        <Font name="Ubuntu Mono" size="13.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

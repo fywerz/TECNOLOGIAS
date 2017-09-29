@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buscaminas.controlador.FXMLMultijugadorController">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="480.0" prefWidth="640.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ListView prefHeight="478.0" prefWidth="186.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="366.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Escritorio/proyecto/buscamina/jugador.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="329.0" layoutY="39.0" text="8400">
+                     <font>
+                        <Font name="Ubuntu Mono" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="308.0" layoutY="21.0" text="intel32">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TableView layoutX="14.0" layoutY="165.0" prefHeight="222.0" prefWidth="408.0">
+                    <columns>
+                      <TableColumn prefWidth="43.0" />
+                      <TableColumn prefWidth="364.0" text="Jugador Online" />
+                    </columns>
+                  </TableView>
+                  <TextField layoutX="14.0" layoutY="124.0" prefHeight="32.0" prefWidth="302.0" />
+                  <Button layoutX="335.0" layoutY="124.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="84.0" text="Buscar" />
+                  <Button layoutX="335.0" layoutY="393.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="84.0" text="Jugar" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
