@@ -28,7 +28,7 @@ import javafx.stage.Stage;
 public class BuscaMinas extends Application {
     private Stage escenario;
     private Parent escenaPrincipal;
-    
+//Comentario    
     static final String ESCENA_INICIO = "vista/FXMLInicio.fxml";
     static final String ESCENA_INICIAR_JUEGO = "vista/FXMLIniciarJuego.fxml";
     
