@@ -39,7 +39,7 @@ public class BuscaMinas extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    
+//comentario2    
     
     /**
      * @param args the command line arguments
