@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-//ksjdb
 package buscaminas;
 
 import java.io.IOException;
