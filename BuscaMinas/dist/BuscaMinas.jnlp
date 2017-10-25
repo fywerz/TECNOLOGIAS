@@ -8,11 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="BuscaMinas.jar" size="63525" download="eager" />
+    <jar href="BuscaMinas.jar" size="18535" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="BuscaMinas" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="buscaminas.BuscaMinas"  name="BuscaMinas" />
+  <jfx:javafx-desc  width="800" height="600" main-class="buscaminas.BuscaMinasApp"  name="BuscaMinas" />
   <update check="always"/>
 </jnlp>

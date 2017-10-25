@@ -10,42 +10,41 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.collections.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buscaminas.controlador.FXMLIniciarJuegoController">
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLIniciarJuegoController">
    <children>
-      <SplitPane dividerPositions="0.29797979797979796" prefHeight="480.0" prefWidth="640.0">
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="4.0" layoutY="3.0" prefHeight="471.0" prefWidth="634.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                 <children>
-                    <ListView prefHeight="478.0" prefWidth="186.0" >
+                    <ListView fx:id="lvwMenu" prefHeight="478.0" prefWidth="186.0">
                     <items>
                         <FXCollections fx:factory="observableArrayList">
-                            <String fx:value="Empezar de Nuevo"/>
-                            <String fx:value="Pausar"/>
-                            <String fx:value="Abandonar Partida"/>
+                            <String fx:value="Abandonar Partida" />
+                            <String fx:value="Pausar" />                            
                         </FXCollections>
                     </items>
                     </ListView>
                 </children></AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="395.0" prefWidth="472.0">
                <children>
-                  <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ivwFotoJugador1" fitHeight="64.0" fitWidth="64.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../Escritorio/proyecto/buscamina/jugador.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="366.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ivwFotoJugador2" fitHeight="64.0" fitWidth="64.0" layoutX="366.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../Escritorio/proyecto/buscamina/jugador.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="86.0" layoutY="25.0" text="Erick" />
-                  <Label layoutX="308.0" layoutY="25.0" text="Jonathan" />
+                  <Label fx:id="lblJugador1" layoutX="86.0" layoutY="25.0" text="Erick" />
+                  <Label fx:id="lblJugador2" layoutX="308.0" layoutY="25.0" text="Jonathan" />
                   <TextField alignment="CENTER" editable="false" layoutX="175.0" layoutY="24.0" prefHeight="25.0" prefWidth="94.0" text="02:24">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </TextField>
-                  <GridPane layoutX="13.0" layoutY="78.0" prefHeight="380.0" prefWidth="418.0">
+                  <GridPane fx:id="gpeTablero" layoutX="13.0" layoutY="78.0" prefHeight="380.0" prefWidth="418.0">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
