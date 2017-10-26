@@ -23,6 +23,10 @@ public final class Tablero {
     contarAlrededor();
   }
 
+  
+
+  public Tablero(){}
+
   /**
    * Metodo para sortear las minas
    */
@@ -59,22 +63,17 @@ public final class Tablero {
   //Ciclo para repasar todo el arreglo
     for (int i = 0; i < arrCasilla.length; i++) {
       for (int j = 0; j < arrCasilla.length; j++) {
-        System.out.println("____________________________________________________________________________________-");
-        System.out.println("probando Casilla ["+i+"]["+j+"]");
         //Ciclo que repasa las casillas alrededor de la casilla actual
         int contadorMinas=0;
-        System.out.println("si"+arrCasilla[i][j]+"diferente 9");
         if (arrCasilla[i][j]!=9){
         for (int k = 0; k < 3; k++) {
           for (int l = 0; l < 3; l++) {
-            System.out.println(i+"+("+k+"-1)");
             int corX=i+(k-1);
             int corY=j+(l-1);
             //Condicion que verifica que no se repase a si misma la casilla, y las oordenadas no se salgan del arreglo
-            System.out.println("probando Casilla ["+i+"]["+j+"] contra"+"Casilla ["+corX+"]["+corY+"]");
-            if((i!=corX && j!=corY) && !(corX<=0 || corX>arrCasilla.length-1) && !(corY<=0 || corY>arrCasilla.length-1)){
+            if((i!=corX || j!=corY) && (corX>=0 && corX<arrCasilla.length) && (corY>=0 && corY<arrCasilla.length) ){
+              // && !(corY<=0 || corY>arrCasilla.length-1)
               //COndicion que verifica si hay mina
-              System.out.println("Checando casilla["+corX+"]["+corY+"] es igual 9");
               if(arrCasilla[corX][corY]==9){
                 contadorMinas++;
               }
@@ -86,6 +85,15 @@ public final class Tablero {
       
         }
       }
+  }
+  
+  public void imprimirMatriz(){
+    for (int i = 0; i < arrCasilla.length; i++) {
+      for (int j = 0; j < arrCasilla.length; j++) {
+        System.out.print(arrCasilla[j][i]+" ");
+        }
+      System.out.println("");   
+    }
   }
   
   //Setters y Getters
