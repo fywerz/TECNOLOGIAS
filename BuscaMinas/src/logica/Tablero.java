@@ -97,9 +97,10 @@ public final class Tablero {
       System.out.println("");   
     }
   }
+  ArrayList<Coordenadas> arrCoordenadas = new ArrayList<>();
   public ArrayList<Coordenadas> limpiarVaciosAlrededor(int actualX, int actualY){
     
-        ArrayList<Coordenadas> arrCoordenadas = new ArrayList<>();
+        
     if(arrCasilla[actualX][actualY]==0){
          arrCoordenadas.add(new Coordenadas(actualX, actualY));
       arrCasilla[actualX][actualY]=-1;
@@ -107,10 +108,10 @@ public final class Tablero {
           for (int l = 0; l < 3; l++) {
             int corX=actualX+(k-1);
             int corY=actualY+(l-1);
-            System.out.println("Comprobando el "+corX+", "+corY+"Con "+actualX+", "+actualY);
+            //System.out.println("Comprobando el "+corX+", "+corY+"Con "+actualX+", "+actualY);
             //Condicion que verifica que no se repase a si misma la casilla, y las oordenadas no se salgan del arreglo
             if((actualX!=corX || actualY!=corY) && (corX>=0 && corX<arrCasilla.length) && (corY>=0 && corY<arrCasilla.length) && (arrCasilla[corX][corY]!=-1) ){
-              System.out.println("Entrando a limpiar "+corX+","+corY);
+             // System.out.println("Entrando a limpiar "+corX+","+corY);
               limpiarVaciosAlrededor(corX, corY);
             }        
           }
