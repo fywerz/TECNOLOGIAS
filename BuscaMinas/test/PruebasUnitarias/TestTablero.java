@@ -91,13 +91,13 @@ public class TestTablero {
     tab.setArrCasilla(new int [10][10]); //Declaracion de Tablero
     tab.inicializar(); //Uso de metodo inicializar
     arrPrueba=tab.getArrCasilla(); //Se obtiene del Tablero el arreglo
-    arrPrueba [3][2]=9; //Se le colocan dos minas al arreglo
+    arrPrueba [1][1]=9; //Se le colocan dos minas al arreglo
     arrPrueba [5][4]=9;
     tab.setArrCasilla(arrPrueba); //se le pone arreglo al Tablero
     tab.contarAlrededor(); //uso del metodo contarAlrededor
     tab.imprimirMatriz(); //Se imprime para verificar
     
-    Assert.assertEquals(2, arrPrueba[4][3]);
+    Assert.assertEquals(1, arrPrueba[4][3]);
     Assert.assertEquals(1, arrPrueba[5][3]);
   }
   
@@ -107,11 +107,14 @@ public class TestTablero {
   @Test
   public void testLimpiarVaciosAlrededor(){
     System.out.println("Test LimpiarVaciosAlrededor");
-    tab.setArrCasilla(new int [5][5]); //Declaracion de Tablero
+    tab.setArrCasilla(new int [10][10]); //Declaracion de Tablero
     tab.inicializar(); //Uso de metodo inicializar
     arrPrueba=tab.getArrCasilla(); //Se obtiene del Tablero el arreglo
     arrPrueba [3][2]=9; //Se le colocan dos minas al arreglo
     arrPrueba [2][2]=9;
+    arrPrueba [4][5]=9;
+    arrPrueba [0][2]=9;
+    arrPrueba [1][7]=9;
     tab.setArrCasilla(arrPrueba); //se le pone arreglo al Tablero
     tab.contarAlrededor(); //uso del metodo contarAlrededor
     tab.imprimirMatriz(); //Se imprime para verificar
