@@ -8,6 +8,10 @@ package buscaminas;
 
 import controlador.FXMLControlable;
 import java.io.IOException;
+import java.net.URL;
+import java.rmi.RMISecurityManager;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +32,25 @@ public class BuscaMinasApp extends Application {
     
     private Stage mainStage;
     private Pane mainScene; 
+    private Registry registro;
+    
+    @Override
+    public void init() {
+        URL path = getClass().getResource("..policy/client.policy");
+        System.setProperty("java.security.policy", path.toString());
+        
+        if (System.getSecurityManager() == null) {
+            System.setSecurityManager(new RMISecurityManager());
+        }
+
+        try {
+            registro = LocateRegistry.getRegistry("127.0.0.1");
+        } catch (RemoteException ex) {
+            System.err.println(ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+    
     
     @Override
     public void start(Stage stage) {
@@ -60,11 +83,15 @@ public class BuscaMinasApp extends Application {
             FXMLControlable myScreenControler = ((FXMLControlable) myLoader.getController());
             myScreenControler.setMainApp(this);
         } catch (IOException ex) {
-            System.err.println("EXCEPTION 2 APPMAIN" + ex.getMessage());
+            System.err.println(ex.getMessage());
+            ex.printStackTrace();
             
         }
     }
     
+    public Registry obtenerRegistro() {
+        return this.registro;
+    }
     /**
      * @param args the command line arguments
      */

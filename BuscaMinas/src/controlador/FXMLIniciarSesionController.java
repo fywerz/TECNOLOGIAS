@@ -6,18 +6,24 @@
 package controlador;
 
 import buscaminas.BuscaMinasApp;
-import java.awt.event.ActionEvent;
 import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import modelo.Cuenta;
 import modelo.Dialogo;
+import modelo.ICuenta;
 
 /**
  * FXML Controller class
@@ -34,7 +40,9 @@ public class FXMLIniciarSesionController implements Initializable, FXMLControlab
     private ListView<String> lvwMenu;
     @FXML
     private Button btnIniciarSesion;
+
     private BuscaMinasApp mainApp;
+    private ICuenta stub;
 
     private String generarHash(String contrasena) {
         MessageDigest sha256;
@@ -48,7 +56,8 @@ public class FXMLIniciarSesionController implements Initializable, FXMLControlab
             }
             return stringBuilder.toString();
         } catch (NoSuchAlgorithmException ex) {
-            System.out.println(ex.getMessage());
+            System.err.println(ex.getMessage());
+            ex.printStackTrace();
             return null;
         }
 
@@ -56,7 +65,42 @@ public class FXMLIniciarSesionController implements Initializable, FXMLControlab
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Platform.runLater(() -> {
+            try {
+                stub = (ICuenta) mainApp.obtenerRegistro().lookup("rmi://127.0.0.1:1099/" + "cuenta");
+            } catch (RemoteException ex) {
+                System.err.println(ex.getMessage());
+                ex.printStackTrace();
+            } catch (NotBoundException ex) {
+                System.err.println(ex.getMessage());
+                ex.printStackTrace();
+            }
+        });    
+            btnIniciarSesion.setOnAction(value -> {
+            String usuario = tfdUsuario.getText();
+            String contrasena = tfdContrasena.getText();
+            String password = generarHash(contrasena);
 
+            if (password != null) {
+                try {
+                    Cuenta cuenta = stub.autenticar(new Cuenta(usuario, password));
+                    if (cuenta != null) {
+                        Dialogo.informacion("Bienvendo: " + cuenta.getUsuario());
+
+                        mainApp.intercambiarEscena(BuscaMinasApp.ESCENA_MULTIJUGADOR);
+                    } else if (cuenta == null) {
+                        Dialogo.advertencia("El usuario o contraseña no han sido indentificados");
+                    }
+                } catch (RemoteException ex) {
+                    System.err.println(ex.getMessage());
+                    ex.printStackTrace();
+                }
+
+            }
+
+        });
+            
+        
         lvwMenu.setOnMouseClicked(value -> {
             String opcion = lvwMenu.getSelectionModel().getSelectedItem();
             switch (opcion) {
@@ -66,18 +110,7 @@ public class FXMLIniciarSesionController implements Initializable, FXMLControlab
             }
         });
 
-        btnIniciarSesion.setOnAction(value -> {
-            String usuario = tfdUsuario.getText();
-            String contrasena = tfdContrasena.getText();
-            String password = generarHash(contrasena);
-            if (password != null) {
-                Dialogo.informacion("BIENVENDIO A BUSCAMINAS APP");
-                mainApp.intercambiarEscena(BuscaMinasApp.ESCENA_MULTIJUGADOR);
-            } else {
-                Dialogo.advertencia("El usuario o contraseña no han sido indentificados");
-            }
-
-        });
+        
 
     }
 
