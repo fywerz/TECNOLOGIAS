@@ -7,7 +7,6 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -120,6 +119,7 @@ public class TestTablero {
     tab.contarAlrededor(); //uso del metodo contarAlrededor
     tab.imprimirMatriz(); //Se imprime para verificar
     ArrayList<Coordenadas> arrLimpios=tab.limpiarVaciosAlrededor(0, 5);
+    arrLimpios.clear();
     for (int i = 0; i < arrLimpios.size(); i++) {
    System.out.println("X:"+arrLimpios.get(i).getCoordenadaX()+"Y:"+arrLimpios.get(i).getCoordenadaY());      
     }
