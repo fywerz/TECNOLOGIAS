@@ -8,35 +8,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="buscaminas.controlador.FXMLMejoresJugadoresController">
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buscaminas.controlador.FXMLMejoresJugadoresController">
    <children>
-      <SplitPane dividerPositions="0.29797979797979796" prefHeight="480.0" prefWidth="640.0">
+      <SplitPane prefHeight="480.0" prefWidth="640.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Label layoutX="306.0" layoutY="21.0" text="intel32">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="331.0" layoutY="46.0" text="8400">
-                     <font>
-                        <Font name="Ubuntu Mono" size="13.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="366.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../Escritorio/proyecto/buscamina/jugador.png" />
-                     </image>
-                  </ImageView>
-                  <TableView layoutX="22.0" layoutY="147.0" prefHeight="200.0" prefWidth="403.0">
+                  <TableView layoutX="64.0" layoutY="47.0" prefHeight="311.0" prefWidth="531.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" />
-                      <TableColumn prefWidth="75.0" text="Jugador" />
+                      <TableColumn prefWidth="75.0" text="Posicion" />
+                      <TableColumn prefWidth="269.0" text="Jugador" />
+                        <TableColumn minWidth="0.0" prefWidth="186.0" text="Puntaje" />
                     </columns>
                   </TableView>
+                  <Button layoutX="283.0" layoutY="403.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="131.0" text="Regresar" />
                </children>
             </AnchorPane>
         </items>
