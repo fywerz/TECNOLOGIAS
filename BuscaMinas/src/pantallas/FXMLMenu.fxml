@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladoresP.FXMLMenuController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="480.0" stroke="BLACK" strokeType="INSIDE" width="640.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.30952380952380953" startY="0.6142857142857143">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Button layoutX="258.0" layoutY="185.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="148.0" text="Ver mejores jugadores" />
+      <Button layoutX="37.0" layoutY="437.0" mnemonicParsing="false" text="Salir" />
+      <Button layoutX="292.0" layoutY="284.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" text="Opciones" />
+      <Button layoutX="253.0" layoutY="76.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="158.0" text="Jugar" />
+   </children>
+</AnchorPane>

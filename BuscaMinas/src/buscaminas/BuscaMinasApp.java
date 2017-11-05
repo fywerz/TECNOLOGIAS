@@ -6,10 +6,8 @@
 
 package buscaminas;
 
-import controlador.FXMLControlable;
 import java.io.IOException;
 import java.net.URL;
-import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
