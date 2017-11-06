@@ -3,16 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/fywer/.ssh/tecnologias/BuscaMinas/src/vista/FXMLIniciarSesion.fxml</file>
-            <file>file:/C:/Users/fywer/.ssh/tecnologias/BuscaMinas/src/vista/FXMLMultijugador.fxml</file>
-            <file>file:/C:/Users/fywer/.ssh/tecnologias/BuscaMinas/src/controlador/FXMLMultijugadorController.java</file>
-            <file>file:/C:/Users/fywer/.ssh/tecnologias/BuscaMinas/src/controlador/FXMLCrearCuentaController.java</file>
-            <file>file:/C:/Users/fywer/.ssh/tecnologias/BuscaMinas/src/buscaminas/BuscaMinasApp.java</file>
-            <file>file:/C:/Users/fywer/.ssh/tecnologias/BuscaMinas/src/controlador/FXMLMenuPrincipalController.java</file>
-            <file>file:/C:/Users/fywer/.ssh/tecnologias/BuscaMinas/src/controlador/FXMLIniciarSesionController.java</file>
-            <file>file:/C:/Users/fywer/.ssh/tecnologias/BuscaMinas/src/controlador/FXMLIniciarJuegoController.java</file>
-            <file>file:/C:/Users/fywer/.ssh/tecnologias/BuscaMinas/src/vista/FXMLIniciarJuego.fxml</file>
-            <file>file:/C:/Users/fywer/.ssh/tecnologias/BuscaMinas/src/modelo/Dialogo.java</file>
+            <file>file:/C:/Users/EricK/Documents/Escuela/5/Tecnologias%20para%20la%20construc/Buscamina/BuscaMinas/test/PruebasUnitarias/TestBaseDatos.java</file>
+            <file>file:/C:/Users/EricK/Documents/Escuela/5/Tecnologias%20para%20la%20construc/Buscamina/BuscaMinas/test/PruebasUnitarias/TestTablero.java</file>
+            <file>file:/C:/Users/EricK/Documents/Escuela/5/Tecnologias%20para%20la%20construc/Buscamina/BuscaMinas/src/buscaminas/Buscaminas.java</file>
         </group>
     </open-files>
 </project-private>

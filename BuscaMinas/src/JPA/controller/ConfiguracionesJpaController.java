@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -26,8 +27,8 @@ import javax.persistence.EntityManagerFactory;
  */
 public class ConfiguracionesJpaController implements Serializable {
 
-  public ConfiguracionesJpaController(EntityManagerFactory emf) {
-    this.emf = emf;
+  public ConfiguracionesJpaController() {
+    this.emf = Persistence.createEntityManagerFactory("BuscaMinasPU");
   }
   private EntityManagerFactory emf = null;
 

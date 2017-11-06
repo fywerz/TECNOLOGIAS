@@ -35,10 +35,6 @@ public class Buscaminas extends Application {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    List<Jugador> jugadores=new ArrayList<>();
-    JugadorJpaController jpajugador=new JugadorJpaController();
-    jugadores= jpajugador.findJugadorEntities();
-    System.out.println(jugadores.get(0).getNombreJugador());
     launch(args);
   }
   
