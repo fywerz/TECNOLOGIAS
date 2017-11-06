@@ -8,12 +8,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladoresP.FXMLMenuController">
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladoresP.FXMLMenuController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="480.0" stroke="BLACK" strokeType="INSIDE" width="640.0">
          <fill>
-            <LinearGradient endX="1.0" endY="1.0" startX="0.30952380952380953" startY="0.6142857142857143">
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3761904761904762" startY="0.7047619047619047">
                <stops>
                   <Stop color="BLACK" />
                   <Stop color="WHITE" offset="1.0" />

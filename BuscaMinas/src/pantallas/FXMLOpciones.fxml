@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladoresP.FXMLOpcionesController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="480.0" stroke="BLACK" strokeType="INSIDE" width="640.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.7714285714285715" startY="0.5761904761904761">
+               <stops>
+                  <Stop color="#075eae" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="161.0" layoutY="94.0" text="Dificultad:" />
+      <ChoiceBox layoutX="268.0" layoutY="90.0" prefWidth="150.0" />
+      <TextField layoutX="269.0" layoutY="157.0" />
+      <Label layoutX="101.0" layoutY="161.0" text="Nombre de jugador:" />
+      <Slider layoutX="274.0" layoutY="253.0" value="100.0" />
+      <Label layoutX="155.0" layoutY="252.0" text="Volumen:" />
+      <Button layoutX="291.0" layoutY="332.0" mnemonicParsing="false" text="Guardar" />
+      <Button layoutX="576.0" layoutY="427.0" mnemonicParsing="false" text="Salir" />
+   </children>
+</AnchorPane>
