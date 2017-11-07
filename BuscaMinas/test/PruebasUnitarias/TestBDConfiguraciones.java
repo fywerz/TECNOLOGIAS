@@ -7,6 +7,7 @@ package PruebasUnitarias;
 
 import JPA.controller.ConfiguracionesJpaController;
 import JPA.controller.exceptions.NonexistentEntityException;
+import JPA.controller.exceptions.PreexistingEntityException;
 import JPA.entidades.Configuraciones;
 import java.util.List;
 import java.util.logging.Level;
@@ -42,7 +43,7 @@ public class TestBDConfiguraciones {
   public void testBDEditar(){
     System.out.println("Editar");
     imprimirConfiguraciones();
-    Configuraciones editC=new Configuraciones(1, 2, 20);
+    Configuraciones editC=new Configuraciones(2, 2, 20);
     try {
       configuracionjpa.edit(editC);
     } catch (NonexistentEntityException ex) {
@@ -51,19 +52,49 @@ public class TestBDConfiguraciones {
       Logger.getLogger(TestBDConfiguraciones.class.getName()).log(Level.SEVERE, null, ex);
     }
     configuraciones=configuracionjpa.findConfiguracionesEntities();
+    System.out.println("Editado");
     imprimirConfiguraciones();
     Assert.assertEquals(2, configuraciones.get(0).getDificultad());
     Assert.assertEquals(20, configuraciones.get(0).getVolumen());
     
-    Configuraciones returnC=new Configuraciones(1, 1, 10);
+    Configuraciones returnC=new Configuraciones(2, 1, 10);
     try {
-      configuracionjpa.edit(editC);
+      configuracionjpa.edit(returnC);
     } catch (NonexistentEntityException ex) {
       Logger.getLogger(TestBDConfiguraciones.class.getName()).log(Level.SEVERE, null, ex);
     } catch (Exception ex) {
       Logger.getLogger(TestBDConfiguraciones.class.getName()).log(Level.SEVERE, null, ex);
     }
+  }
+  
+  @Test
+  public void testDBCrearEliminar(){
+    System.out.println("Crear");
+    imprimirConfiguraciones();
+    Configuraciones crearC=new Configuraciones(3, 3, 40);
+    try {
+      configuracionjpa.create(crearC);
+    } catch (PreexistingEntityException ex) {
+      Logger.getLogger(TestBDConfiguraciones.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (Exception ex) {
+      Logger.getLogger(TestBDConfiguraciones.class.getName()).log(Level.SEVERE, null, ex);
+    }
     
+    System.out.println("Creado");
+    configuraciones=configuracionjpa.findConfiguracionesEntities();
+    Assert.assertEquals(3, configuraciones.get(configuraciones.size()-1).getDificultad());
+    Assert.assertEquals(40, configuraciones.get(configuraciones.size()-1).getVolumen());
+    imprimirConfiguraciones();
+    Assert.assertEquals(2, configuraciones.size());
+    System.out.println("Eliminar");
+    try {
+      configuracionjpa.destroy(configuraciones.get(configuraciones.size()-1).getJugadoridJugador());
+    } catch (NonexistentEntityException ex) {
+      Logger.getLogger(TestBDConfiguraciones.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    System.out.println("Eliminado");
+    configuraciones=configuracionjpa.findConfiguracionesEntities();
+    Assert.assertEquals(1, configuraciones.size());
   }
   
   public void imprimirConfiguraciones(){
