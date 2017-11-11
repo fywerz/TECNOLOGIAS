@@ -35,8 +35,7 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "Jugador.findByContrasena", query = "SELECT j FROM Jugador j WHERE j.contrasena = :contrasena"),
   @NamedQuery(name = "Jugador.findByGenero", query = "SELECT j FROM Jugador j WHERE j.genero = :genero"),
   @NamedQuery(name = "Jugador.findByFechaNacimiento", query = "SELECT j FROM Jugador j WHERE j.fechaNacimiento = :fechaNacimiento"),
-  @NamedQuery(name = "Jugador.findByIdJugador", query = "SELECT j FROM Jugador j WHERE j.idJugador = :idJugador"),
-  @NamedQuery(name = "Jugador.findByPuntaje", query = "SELECT j FROM Jugador j WHERE j.puntaje = :puntaje")})
+  @NamedQuery(name = "Jugador.findByIdJugador", query = "SELECT j FROM Jugador j WHERE j.idJugador = :idJugador")})
 public class Jugador implements Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -58,9 +57,6 @@ public class Jugador implements Serializable {
   @Basic(optional = false)
   @Column(name = "idJugador")
   private Integer idJugador;
-  @Basic(optional = false)
-  @Column(name = "puntaje")
-  private double puntaje;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "jugador")
   private Configuraciones configuraciones;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "jugador")
@@ -73,13 +69,12 @@ public class Jugador implements Serializable {
     this.idJugador = idJugador;
   }
 
-  public Jugador(Integer idJugador, String nombreJugador, String contrasena, boolean genero, Date fechaNacimiento, double puntaje) {
+  public Jugador(Integer idJugador, String nombreJugador, String contrasena, boolean genero, Date fechaNacimiento) {
     this.idJugador = idJugador;
     this.nombreJugador = nombreJugador;
     this.contrasena = contrasena;
     this.genero = genero;
     this.fechaNacimiento = fechaNacimiento;
-    this.puntaje = puntaje;
   }
 
   public String getNombreJugador() {
@@ -120,14 +115,6 @@ public class Jugador implements Serializable {
 
   public void setIdJugador(Integer idJugador) {
     this.idJugador = idJugador;
-  }
-
-  public double getPuntaje() {
-    return puntaje;
-  }
-
-  public void setPuntaje(double puntaje) {
-    this.puntaje = puntaje;
   }
 
   public Configuraciones getConfiguraciones() {

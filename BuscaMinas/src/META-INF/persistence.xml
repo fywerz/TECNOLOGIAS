@@ -3,8 +3,8 @@
   <persistence-unit name="BuscaMinasPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>JPA.entidades.Partidasganadas</class>
-    <class>JPA.entidades.Jugador</class>
     <class>JPA.entidades.Configuraciones</class>
+    <class>JPA.entidades.Jugador</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/buscaminasdb?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

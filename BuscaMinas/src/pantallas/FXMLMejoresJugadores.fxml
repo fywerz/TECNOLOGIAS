@@ -12,14 +12,14 @@
 <AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladoresP.FXMLMejoresJugadoresController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="480.0" stroke="BLACK" strokeType="INSIDE" width="640.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cd7f32" height="350.0" layoutX="47.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cd7f32" height="350.0" layoutX="11.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="186.0" />
       <Label layoutX="70.0" layoutY="26.0" text="Principiante">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="350.0" layoutX="245.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fae600" height="350.0" layoutX="447.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="350.0" layoutX="227.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="186.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fae600" height="350.0" layoutX="440.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="186.0" />
       <Label layoutX="498.0" layoutY="26.0" text="Dificil">
          <font>
             <Font size="20.0" />
@@ -31,22 +31,22 @@
          </font>
       </Label>
       <Button layoutX="301.0" layoutY="441.0" mnemonicParsing="false" text="Salir" />
-      <TableView layoutX="47.0" layoutY="101.0" opacity="0.73" prefHeight="278.0" prefWidth="150.0">
+      <TableView layoutX="11.0" layoutY="101.0" opacity="0.73" prefHeight="278.0" prefWidth="186.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Jugador" />
-          <TableColumn prefWidth="104.0" text="Partidas ganadas" />
+          <TableColumn prefWidth="117.0" text="Jugador" />
+          <TableColumn prefWidth="68.0" text="Partidas ganadas" />
         </columns>
       </TableView>
-      <TableView layoutX="245.0" layoutY="101.0" opacity="0.73" prefHeight="278.0" prefWidth="150.0">
+      <TableView layoutX="227.0" layoutY="101.0" opacity="0.73" prefHeight="278.0" prefWidth="186.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="Jugador" />
-            <TableColumn prefWidth="104.0" text="Partidas ganadas" />
+            <TableColumn prefWidth="118.0" text="Jugador" />
+            <TableColumn prefWidth="67.0" text="Partidas ganadas" />
          </columns>
       </TableView>
-      <TableView layoutX="447.0" layoutY="101.0" opacity="0.72" prefHeight="278.0" prefWidth="150.0">
+      <TableView layoutX="440.0" layoutY="101.0" opacity="0.72" prefHeight="278.0" prefWidth="186.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="Jugador" />
-            <TableColumn prefWidth="104.0" text="Partidas ganadas" />
+            <TableColumn prefWidth="117.0" text="Jugador" />
+            <TableColumn prefWidth="68.0" text="Partidas ganadas" />
          </columns>
       </TableView>
    </children>

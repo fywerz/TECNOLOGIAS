@@ -118,7 +118,8 @@ public class TestTablero {
     tab.setArrCasilla(arrPrueba); //se le pone arreglo al Tablero
     tab.contarAlrededor(); //uso del metodo contarAlrededor
     tab.imprimirMatriz(); //Se imprime para verificar
-    ArrayList<Coordenadas> arrLimpios=tab.limpiarVaciosAlrededor(0, 5);
+    ArrayList<Coordenadas> arrLimpios=new ArrayList<>();
+    arrLimpios=tab.limpiarVaciosAlrededor(arrLimpios,0, 5);
     arrLimpios.clear();
     for (int i = 0; i < arrLimpios.size(); i++) {
    System.out.println("X:"+arrLimpios.get(i).getCoordenadaX()+"Y:"+arrLimpios.get(i).getCoordenadaY());      
@@ -126,7 +127,8 @@ public class TestTablero {
     System.out.println("Despues de limpiar vacios");
     tab.imprimirMatriz();
     
-    ArrayList<Coordenadas> arrLimpios2=tab.limpiarVaciosAlrededor(0, 0);
+    ArrayList<Coordenadas> arrLimpios2=new ArrayList<>();
+    arrLimpios2=tab.limpiarVaciosAlrededor(arrLimpios, 0, 0);
     for (int i = 0; i < arrLimpios.size(); i++) {
    System.out.println("X:"+arrLimpios2.get(i).getCoordenadaX()+"Y:"+arrLimpios2.get(i).getCoordenadaY());      
     }

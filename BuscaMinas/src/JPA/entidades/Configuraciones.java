@@ -28,7 +28,9 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "Configuraciones.findAll", query = "SELECT c FROM Configuraciones c"),
   @NamedQuery(name = "Configuraciones.findByDificultad", query = "SELECT c FROM Configuraciones c WHERE c.dificultad = :dificultad"),
   @NamedQuery(name = "Configuraciones.findByVolumen", query = "SELECT c FROM Configuraciones c WHERE c.volumen = :volumen"),
-  @NamedQuery(name = "Configuraciones.findByJugadoridJugador", query = "SELECT c FROM Configuraciones c WHERE c.jugadoridJugador = :jugadoridJugador")})
+  @NamedQuery(name = "Configuraciones.findByJugadoridJugador", query = "SELECT c FROM Configuraciones c WHERE c.jugadoridJugador = :jugadoridJugador"),
+  @NamedQuery(name = "Configuraciones.findByPuerto", query = "SELECT c FROM Configuraciones c WHERE c.puerto = :puerto"),
+  @NamedQuery(name = "Configuraciones.findByIp", query = "SELECT c FROM Configuraciones c WHERE c.ip = :ip")})
 public class Configuraciones implements Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -42,6 +44,12 @@ public class Configuraciones implements Serializable {
   @Basic(optional = false)
   @Column(name = "jugador_idJugador")
   private Integer jugadoridJugador;
+  @Basic(optional = false)
+  @Column(name = "puerto")
+  private int puerto;
+  @Basic(optional = false)
+  @Column(name = "ip")
+  private String ip;
   @JoinColumn(name = "jugador_idJugador", referencedColumnName = "idJugador", insertable = false, updatable = false)
   @OneToOne(optional = false)
   private Jugador jugador;
@@ -53,10 +61,12 @@ public class Configuraciones implements Serializable {
     this.jugadoridJugador = jugadoridJugador;
   }
 
-  public Configuraciones(Integer jugadoridJugador, int dificultad, int volumen) {
+  public Configuraciones(Integer jugadoridJugador, int dificultad, int volumen, int puerto, String ip) {
     this.jugadoridJugador = jugadoridJugador;
     this.dificultad = dificultad;
     this.volumen = volumen;
+    this.puerto = puerto;
+    this.ip = ip;
   }
 
   public int getDificultad() {
@@ -81,6 +91,22 @@ public class Configuraciones implements Serializable {
 
   public void setJugadoridJugador(Integer jugadoridJugador) {
     this.jugadoridJugador = jugadoridJugador;
+  }
+
+  public int getPuerto() {
+    return puerto;
+  }
+
+  public void setPuerto(int puerto) {
+    this.puerto = puerto;
+  }
+
+  public String getIp() {
+    return ip;
+  }
+
+  public void setIp(String ip) {
+    this.ip = ip;
   }
 
   public Jugador getJugador() {

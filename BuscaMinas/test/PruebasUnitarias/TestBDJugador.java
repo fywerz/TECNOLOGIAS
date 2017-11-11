@@ -22,34 +22,42 @@ import org.junit.Before;
  * @author EricK
  */
 public class TestBDJugador {
+  //Inicializacion de variables globales
   JugadorJpaController jugadorjpa=new JugadorJpaController();
   List <Jugador> jugadores=jugadorjpa.findJugadorEntities();
   
+  /**
+   * Before para las clases que actualiza la lista de Jugadores
+   */
   @Before
   public void before(){
     System.out.println("Before");
     jugadores=jugadorjpa.findJugadorEntities();
-    
   }
   
+  /**
+   * Test para lectura de datos en la base
+   */
   @Test
   public void testJugadorLeer(){
     System.out.println("Leer");
-    imprimirJugadores();
-    //Asserts que leen el jugador en la base de datos 
+    imprimirJugadores(); 
+    //Asserts que leen el jugador de la lista y comparan con valores conocidos 
     Assert.assertEquals(new Integer(1), jugadores.get(0).getIdJugador());
     Assert.assertEquals("EricKParanoiD", jugadores.get(0).getNombreJugador());
     Assert.assertEquals(true, jugadores.get(0).getGenero());
     Assert.assertEquals(Date.valueOf("1997-08-01"), jugadores.get(0).getFechaNacimiento());
-    Assert.assertEquals(0, jugadores.get(0).getPuntaje(), 0);  
   }
   
+  /**
+   * Metodo para probar la edicion en base de datos
+   */
   @Test
   public void testJugadorEditar(){
     System.out.println("Editar");
     imprimirJugadores();
     //Creacion de objeto Jugador para editar
-    Jugador editJ=new Jugador(1, "EricKPrnD", "8fc9c94f022d84cf039b70ae22bc104792906a105462e9765dd6d86aa345d4b0", true, Date.valueOf("1997-08-01"), 0);
+    Jugador editJ=new Jugador(1, "EricKPrnD", "8fc9c94f022d84cf039b70ae22bc104792906a105462e9765dd6d86aa345d4b0", true, Date.valueOf("1997-08-01"));
     //try con editar Jugador
     try {
       jugadorjpa.edit(editJ);
@@ -64,7 +72,6 @@ public class TestBDJugador {
     Assert.assertEquals("EricKPrnD", jugadores.get(0).getNombreJugador());
     Assert.assertEquals(true, jugadores.get(0).getGenero());
     Assert.assertEquals(Date.valueOf("1997-08-01"), jugadores.get(0).getFechaNacimiento());
-    Assert.assertEquals(0, jugadores.get(0).getPuntaje(), 0);
     jugadores=jugadorjpa.findJugadorEntities();
     System.out.println("Despues de editar");
     imprimirJugadores();
@@ -81,18 +88,22 @@ public class TestBDJugador {
       Logger.getLogger(TestBDJugador.class.getName()).log(Level.SEVERE, null, ex);
     }
   }
-  
+  /**
+   * Test para la creacion y eliminacion (juntos para no cambiar nada en la base de datos)
+   */
   @Test
   public void testJugadorCrearEliminar(){
     System.out.println("Crear");
-    Jugador crearJ=new Jugador(31, "erick", "Perro", true, Date.valueOf("1996-08-01"), 0);
-    jugadorjpa.create(crearJ);
-    jugadores=jugadorjpa.findJugadorEntities();
+    //Creacion de entidad a crear
+    Jugador crearJ=new Jugador(31, "erick", "Perro", true, Date.valueOf("1996-08-01"));
+    jugadorjpa.create(crearJ); //Creacion de la entidad
+    jugadores=jugadorjpa.findJugadorEntities(); //Actualizacion de la lista
+    //Asserts de comprobacion de nuevo jugador creado (jugadores.size()-1 para comprobar el ultimo jugador creado)
     Assert.assertEquals("erick", jugadores.get(jugadores.size()-1).getNombreJugador());
     Assert.assertEquals(true, jugadores.get(jugadores.size()-1).getGenero());
     Assert.assertEquals(Date.valueOf("1996-08-01"), jugadores.get(jugadores.size()-1).getFechaNacimiento());
-    Assert.assertEquals(0, jugadores.get(jugadores.size()-1).getPuntaje(), 0);
     jugadores=jugadorjpa.findJugadorEntities();
+    //Comprobacion de numero de jugadores antes de eliminacion
     Assert.assertEquals(4, jugadores.size());
     imprimirJugadores();
     System.out.println("Eliminar");
@@ -101,7 +112,8 @@ public class TestBDJugador {
     } catch (IllegalOrphanException | NonexistentEntityException ex) {
       Logger.getLogger(TestBDJugador.class.getName()).log(Level.SEVERE, null, ex);
     }
-    jugadores=jugadorjpa.findJugadorEntities();
+    jugadores=jugadorjpa.findJugadorEntities(); //Actualizacion de lista
+    //Comprobacion de numero de jugadores despues de eliminacion
     Assert.assertEquals(3, jugadores.size());
     System.out.println("Despues de eliminar");
     imprimirJugadores();
@@ -117,8 +129,7 @@ public class TestBDJugador {
       System.out.println("Jugador Nombre:"+jugadores.get(i).getNombreJugador());
       System.out.println("Jugador Contraseña:"+jugadores.get(i).getContrasena());
       System.out.println("Jugador Genero:"+jugadores.get(i).getGenero());
-      System.out.println("Jugador FechaNacimiento:"+jugadores.get(i).getFechaNacimiento());
-      System.out.println("Jugador Puntaje:"+jugadores.get(i).getPuntaje()+"\n");
+      System.out.println("Jugador FechaNacimiento:"+jugadores.get(i).getFechaNacimiento()+"\n");
   }
   }
 }

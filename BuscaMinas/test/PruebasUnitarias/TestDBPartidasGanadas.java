@@ -8,7 +8,6 @@ package PruebasUnitarias;
 import JPA.controller.PartidasganadasJpaController;
 import JPA.controller.exceptions.NonexistentEntityException;
 import JPA.controller.exceptions.PreexistingEntityException;
-import JPA.entidades.Configuraciones;
 import JPA.entidades.Partidasganadas;
 import java.util.List;
 import java.util.logging.Level;
