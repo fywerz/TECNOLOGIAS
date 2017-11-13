@@ -41,7 +41,9 @@ public class TestBDConfiguraciones {
     imprimirConfiguraciones(); //impresion de todas las configuraciones en la base de datos
     //Asserts con comparaciones 
     Assert.assertEquals(1, configuraciones.get(0).getDificultad());
-    Assert.assertEquals(10, configuraciones.get(0).getVolumen());    
+    Assert.assertEquals(10, configuraciones.get(0).getVolumen());
+    Assert.assertEquals(7001, configuraciones.get(0).getPuerto());
+    Assert.assertEquals("localhost", configuraciones.get(0).getIp());
   }
   /**
    * Test para la edicion en base de datos
@@ -66,6 +68,8 @@ public class TestBDConfiguraciones {
     //Asserts para comprobacion
     Assert.assertEquals(2, configuraciones.get(0).getDificultad());
     Assert.assertEquals(20, configuraciones.get(0).getVolumen());
+    Assert.assertEquals(7001, configuraciones.get(0).getPuerto());
+    Assert.assertEquals("localhost", configuraciones.get(0).getIp());
     //Regreso a variable a normalidad despues de comprobacion de la edicion
     Configuraciones returnC=new Configuraciones(1, 1, 10, 7001, "localhost");
     try {
@@ -83,7 +87,7 @@ public class TestBDConfiguraciones {
   public void testDBCrearEliminar(){
     System.out.println("Crear");
     imprimirConfiguraciones(); //Impresion para comprobacion visual
-    Configuraciones crearC=new Configuraciones(3, 3, 40, 7001, "localhost"); //Creacion de objeto para creacion
+    Configuraciones crearC=new Configuraciones(2, 3, 40, 7001, "localhost"); //Creacion de objeto para creacion
     //Try con creacion de objeto
     try {
       configuracionjpa.create(crearC);
@@ -98,6 +102,8 @@ public class TestBDConfiguraciones {
     //Asserts para comprobacion de creacion
     Assert.assertEquals(3, configuraciones.get(configuraciones.size()-1).getDificultad());
     Assert.assertEquals(40, configuraciones.get(configuraciones.size()-1).getVolumen());
+    Assert.assertEquals(7001, configuraciones.get(configuraciones.size()-1).getPuerto());
+    Assert.assertEquals("localhost", configuraciones.get(configuraciones.size()-1).getIp());
     imprimirConfiguraciones(); //Impresion para comprobacion visual
     //Assert de numero de objetos en la base
     Assert.assertEquals(2, configuraciones.size());

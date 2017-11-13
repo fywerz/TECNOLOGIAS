@@ -120,7 +120,6 @@ public class TestTablero {
     tab.imprimirMatriz(); //Se imprime para verificar
     ArrayList<Coordenadas> arrLimpios=new ArrayList<>();
     arrLimpios=tab.limpiarVaciosAlrededor(arrLimpios,0, 5);
-    arrLimpios.clear();
     for (int i = 0; i < arrLimpios.size(); i++) {
    System.out.println("X:"+arrLimpios.get(i).getCoordenadaX()+"Y:"+arrLimpios.get(i).getCoordenadaY());      
     }
@@ -128,9 +127,9 @@ public class TestTablero {
     tab.imprimirMatriz();
     
     ArrayList<Coordenadas> arrLimpios2=new ArrayList<>();
-    arrLimpios2=tab.limpiarVaciosAlrededor(arrLimpios, 0, 0);
-    for (int i = 0; i < arrLimpios.size(); i++) {
-   System.out.println("X:"+arrLimpios2.get(i).getCoordenadaX()+"Y:"+arrLimpios2.get(i).getCoordenadaY());      
+    arrLimpios2=tab.limpiarVaciosAlrededor(arrLimpios2, 0, 0);
+    for (int i = 0; i < arrLimpios2.size(); i++) {
+   System.out.println("X2:"+arrLimpios2.get(i).getCoordenadaX()+"Y2:"+arrLimpios2.get(i).getCoordenadaY());      
     }
     System.out.println("Despues de limpiar vacios");
     tab.imprimirMatriz();

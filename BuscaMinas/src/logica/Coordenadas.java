@@ -20,7 +20,17 @@ public class Coordenadas {
   }
   
   
+  @Override
+public boolean equals(Object o){
   
+if(( o instanceof Coordenadas)){
+  Coordenadas oCoor=(Coordenadas) o;
+  return oCoor.coordenadaX==this.coordenadaX && oCoor.coordenadaY==this.coordenadaY;
+}else{
+  return false;
+}  
+
+}
   //Setters y getters
 
   public int getCoordenadaX() {

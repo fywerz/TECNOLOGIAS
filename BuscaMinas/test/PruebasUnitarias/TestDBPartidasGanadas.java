@@ -76,7 +76,7 @@ public class TestDBPartidasGanadas {
   public void testDBCrearEliminar(){
     System.out.println("Crear");
     imprimirPartidas();
-    Partidasganadas crearP=new Partidasganadas(3, 6, 5, 1);
+    Partidasganadas crearP=new Partidasganadas(2, 6, 5, 1);
     try {
       partidajpa.create(crearP);
     } catch (PreexistingEntityException ex) {

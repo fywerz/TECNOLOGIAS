@@ -57,7 +57,7 @@ public class TestBDJugador {
     System.out.println("Editar");
     imprimirJugadores();
     //Creacion de objeto Jugador para editar
-    Jugador editJ=new Jugador(1, "EricKPrnD", "8fc9c94f022d84cf039b70ae22bc104792906a105462e9765dd6d86aa345d4b0", true, Date.valueOf("1997-08-01"));
+    Jugador editJ=new Jugador(2, "EricKPrnD", "8fc9c94f022d84cf039b70ae22bc104792906a105462e9765dd6d86aa345d4b0", true, Date.valueOf("1997-08-01"));
     //try con editar Jugador
     try {
       jugadorjpa.edit(editJ);
@@ -68,10 +68,10 @@ public class TestBDJugador {
     }
     //Asserts de comprobacion
     jugadores=jugadorjpa.findJugadorEntities();
-    Assert.assertEquals(new Integer(1), jugadores.get(0).getIdJugador());
-    Assert.assertEquals("EricKPrnD", jugadores.get(0).getNombreJugador());
-    Assert.assertEquals(true, jugadores.get(0).getGenero());
-    Assert.assertEquals(Date.valueOf("1997-08-01"), jugadores.get(0).getFechaNacimiento());
+    Assert.assertEquals(new Integer(2), jugadores.get(1).getIdJugador());
+    Assert.assertEquals("EricKPrnD", jugadores.get(1).getNombreJugador());
+    Assert.assertEquals(true, jugadores.get(1).getGenero());
+    Assert.assertEquals(Date.valueOf("1997-08-01"), jugadores.get(1).getFechaNacimiento());
     jugadores=jugadorjpa.findJugadorEntities();
     System.out.println("Despues de editar");
     imprimirJugadores();
@@ -104,7 +104,7 @@ public class TestBDJugador {
     Assert.assertEquals(Date.valueOf("1996-08-01"), jugadores.get(jugadores.size()-1).getFechaNacimiento());
     jugadores=jugadorjpa.findJugadorEntities();
     //Comprobacion de numero de jugadores antes de eliminacion
-    Assert.assertEquals(4, jugadores.size());
+    Assert.assertEquals(3, jugadores.size());
     imprimirJugadores();
     System.out.println("Eliminar");
     try {
@@ -114,7 +114,7 @@ public class TestBDJugador {
     }
     jugadores=jugadorjpa.findJugadorEntities(); //Actualizacion de lista
     //Comprobacion de numero de jugadores despues de eliminacion
-    Assert.assertEquals(3, jugadores.size());
+    Assert.assertEquals(2, jugadores.size());
     System.out.println("Despues de eliminar");
     imprimirJugadores();
    }
