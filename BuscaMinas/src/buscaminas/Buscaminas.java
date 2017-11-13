@@ -5,11 +5,7 @@
  */
 package buscaminas;
 
-import JPA.controller.JugadorJpaController;
-import JPA.entidades.Jugador;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
