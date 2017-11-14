@@ -5,7 +5,11 @@
  */
 package buscaminas;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import logica.Contador;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /**
  *
@@ -17,8 +21,9 @@ public class Prueba {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    Thread contador= new Thread(new Contador(30));
+    Thread contador=new Thread(new Contador(30));
     contador.start();
+    System.out.println("Segundos");
   }
   
 }

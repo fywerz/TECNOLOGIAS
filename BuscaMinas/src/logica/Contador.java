@@ -18,9 +18,9 @@ private int segundos;
 
   @Override
   public void run() {
-    for (int i = segundos; i > 0; i--) {      
+    for (int i = segundos; segundos > 0; segundos--) {      
       esperarSegundo();
-      System.out.println("Segundos: "+i);
+      System.out.println("Segundos: "+segundos);
     }
    }
 //Constructor
