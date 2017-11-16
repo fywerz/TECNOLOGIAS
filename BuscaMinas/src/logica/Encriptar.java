@@ -2,20 +2,22 @@ package logica;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 	public class Encriptar{
 public String convertirSHA256(String password) {
-	MessageDigest md = null;
+	MessageDigest md;
 	try {
 		md = MessageDigest.getInstance("SHA-256");
 	} 
-	catch (NoSuchAlgorithmException e) {		
-		e.printStackTrace();
-		return null;
+	catch (NoSuchAlgorithmException e) {
+	Logger.getLogger(Contador.class.getName()).log(Level.SEVERE, null, e);	
+      return null;
 	}
 	    
 	byte[] hash = md.digest(password.getBytes());
-	StringBuffer sb = new StringBuffer();
+	StringBuilder sb = new StringBuilder();
 	    
 	for(byte b : hash) {        
 		sb.append(String.format("%02x", b));

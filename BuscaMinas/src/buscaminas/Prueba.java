@@ -19,7 +19,6 @@ public class Prueba {
   public static void main(String[] args) {
     Thread contador=new Thread(new Contador(30));
     contador.start();
-    System.out.println("Segundos");
   }
   
 }
