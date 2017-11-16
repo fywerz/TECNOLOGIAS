@@ -5,11 +5,7 @@
  */
 package buscaminas;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import logica.Contador;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /**
  *

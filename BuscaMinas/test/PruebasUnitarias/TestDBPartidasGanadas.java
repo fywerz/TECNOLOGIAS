@@ -5,10 +5,10 @@
  */
 package PruebasUnitarias;
 
-import JPA.controller.PartidasganadasJpaController;
-import JPA.controller.exceptions.NonexistentEntityException;
-import JPA.controller.exceptions.PreexistingEntityException;
-import JPA.entidades.Partidasganadas;
+import controller.PartidasganadasJpaController;
+import controller.exceptions.NonexistentEntityException;
+import controller.exceptions.PreexistingEntityException;
+import entidades.Partidasganadas;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;

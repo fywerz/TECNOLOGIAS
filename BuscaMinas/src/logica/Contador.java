@@ -12,15 +12,15 @@ import java.util.logging.Logger;
  *
  * @author EricK
  */
-public class Contador implements Runnable{
+public class Contador extends Thread{
 private int segundos;
 
 
   @Override
   public void run() {
-    for (int i = segundos; segundos > 0; segundos--) {      
+    for (int i = segundos; i > 0; i--) {      
       esperarSegundo();
-      System.out.println("Segundos: "+segundos);
+      System.out.println("Segundos: "+i);
     }
    }
 //Constructor

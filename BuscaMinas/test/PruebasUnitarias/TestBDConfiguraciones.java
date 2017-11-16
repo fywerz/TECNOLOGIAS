@@ -1,10 +1,10 @@
 
 package PruebasUnitarias;
 
-import JPA.controller.ConfiguracionesJpaController;
-import JPA.controller.exceptions.NonexistentEntityException;
-import JPA.controller.exceptions.PreexistingEntityException;
-import JPA.entidades.Configuraciones;
+import controller.ConfiguracionesJpaController;
+import controller.exceptions.NonexistentEntityException;
+import controller.exceptions.PreexistingEntityException;
+import entidades.Configuraciones;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;

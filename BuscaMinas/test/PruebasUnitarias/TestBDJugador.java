@@ -5,10 +5,10 @@
  */
 package PruebasUnitarias;
 
-import JPA.controller.JugadorJpaController;
-import JPA.controller.exceptions.IllegalOrphanException;
-import JPA.controller.exceptions.NonexistentEntityException;
-import JPA.entidades.Jugador;
+import controller.JugadorJpaController;
+import controller.exceptions.IllegalOrphanException;
+import controller.exceptions.NonexistentEntityException;
+import entidades.Jugador;
 import java.sql.Date;
 import java.util.List;
 import java.util.logging.Level;
