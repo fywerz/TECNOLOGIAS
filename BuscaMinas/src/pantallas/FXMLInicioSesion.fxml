@@ -24,7 +24,7 @@
       <Label layoutX="172.0" layoutY="86.0" text="Jugador:" />
       <Label layoutX="155.0" layoutY="176.0" text="Contraseña:" />
       <TextField fx:id="txfUsuario" layoutX="278.0" layoutY="82.0" prefHeight="25.0" prefWidth="231.0" />
-      <Button layoutX="531.0" layoutY="420.0" mnemonicParsing="false" text="Crear cuenta" />
+      <Button fx:id="btnCrear" layoutX="531.0" layoutY="420.0" mnemonicParsing="false" text="Crear cuenta" />
       <PasswordField fx:id="psfContrasena" layoutX="278.0" layoutY="172.0" prefHeight="25.0" prefWidth="231.0" />
    </children>
 </AnchorPane>

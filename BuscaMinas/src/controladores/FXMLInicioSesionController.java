@@ -60,22 +60,16 @@ public class FXMLInicioSesionController implements Initializable {
             //alerta de usuario no encontrado
             alerta.alertaInfo("Acceso denegado", "Usuario no encontrado", "El usuario con el que intentas ingresar no existe");
         }
-
       }
-      /**
-       * Metodo para la invocacion del menu
-       */
-      private void menu() {
-        Stage stage = (Stage) btnIniciar.getScene().getWindow();
-        stage.close();
-
-        try {
-          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pantallas/FXMLMenu.fxml"));
-          Parent root1 = (Parent) fxmlLoader.load();
-          stage.setScene(new Scene(root1));
-          stage.show();
-        } catch (Exception e) {
-        }
+    });
+    
+    /**
+     * Accion del boton Crear que lleva a crear un nuevo usuario
+     */
+    btnCrear.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        crearCuenta();
       }
     });
   }
@@ -100,6 +94,39 @@ public class FXMLInicioSesionController implements Initializable {
 
     }
     return 2; //2 si el nombre de jugador no es encontrado
+  }
+  
+  
+      /**
+       * Metodo para la invocacion del menu
+       */
+      private void menu() {
+        Stage stage = (Stage) btnIniciar.getScene().getWindow();
+        stage.close();
+
+        try {
+          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pantallas/FXMLMenu.fxml"));
+          Parent root1 = (Parent) fxmlLoader.load();
+          stage.setScene(new Scene(root1));
+          stage.show();
+        } catch (Exception e) {
+        }
+      }
+  /**
+   * Metodo para ir a la escena de crear cuenta
+   */
+  public void crearCuenta(){
+    Stage stage = (Stage) btnIniciar.getScene().getWindow();
+        stage.close();
+
+        try {
+          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pantallas/FXMLCrearCuenta.fxml"));
+          Parent root1 = (Parent) fxmlLoader.load();
+          stage.setScene(new Scene(root1));
+          stage.show();
+        } catch (Exception e) {
+        }
+      
   }
 
 }
