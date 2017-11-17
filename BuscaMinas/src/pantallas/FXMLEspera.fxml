@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladoresP.FXMLEsperaController">
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.FXMLEsperaController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1feeff" height="480.0" stroke="BLACK" strokeType="INSIDE" width="640.0" />
       <ProgressBar layoutX="121.0" layoutY="222.0" prefHeight="18.0" prefWidth="399.0" progress="0.0" />

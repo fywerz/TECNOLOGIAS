@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladoresP.FXMLJuegoDificilController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.FXMLJuegoDificilController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="480.0" layoutX="188.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="452.0">
          <fill>
