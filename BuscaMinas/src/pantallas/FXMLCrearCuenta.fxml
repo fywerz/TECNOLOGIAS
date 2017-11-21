@@ -17,8 +17,8 @@
       <TextField fx:id="txfNombreJugador" layoutX="293.0" layoutY="62.0" prefHeight="25.0" prefWidth="200.0" />
       <PasswordField fx:id="psfContrasena" layoutX="293.0" layoutY="110.0" prefHeight="25.0" prefWidth="200.0" />
       <PasswordField fx:id="psfRepita" layoutX="293.0" layoutY="155.0" prefHeight="25.0" prefWidth="200.0" />
-      <ChoiceBox fx:id="chbGenero" layoutX="293.0" layoutY="200.0" prefHeight="25.0" prefWidth="200.0" />
       <DatePicker fx:id="dtpFecha" layoutX="293.0" layoutY="250.0" prefHeight="25.0" prefWidth="200.0" />
       <Button fx:id="btnRegresar" layoutX="540.0" layoutY="421.0" mnemonicParsing="false" text="Regresar" />
+      <ComboBox fx:id="cbbGenero" layoutX="293.0" layoutY="200.0" prefHeight="25.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

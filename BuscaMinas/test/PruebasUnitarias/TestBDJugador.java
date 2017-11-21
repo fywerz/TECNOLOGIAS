@@ -43,7 +43,7 @@ public class TestBDJugador {
     System.out.println("Leer");
     imprimirJugadores(); 
     //Asserts que leen el jugador de la lista y comparan con valores conocidos 
-    Assert.assertEquals(new Integer(1), jugadores.get(0).getIdJugador());
+    Assert.assertEquals(Integer.valueOf("1"), jugadores.get(0).getIdJugador());
     Assert.assertEquals("EricKParanoiD", jugadores.get(0).getNombreJugador());
     Assert.assertEquals(true, jugadores.get(0).getGenero());
     Assert.assertEquals(Date.valueOf("1997-08-01"), jugadores.get(0).getFechaNacimiento());
@@ -68,7 +68,7 @@ public class TestBDJugador {
     }
     //Asserts de comprobacion
     jugadores=jugadorjpa.findJugadorEntities();
-    Assert.assertEquals(new Integer(2), jugadores.get(1).getIdJugador());
+    Assert.assertEquals(Integer.valueOf("2"), jugadores.get(1).getIdJugador());
     Assert.assertEquals("EricKPrnD", jugadores.get(1).getNombreJugador());
     Assert.assertEquals(true, jugadores.get(1).getGenero());
     Assert.assertEquals(Date.valueOf("1997-08-01"), jugadores.get(1).getFechaNacimiento());

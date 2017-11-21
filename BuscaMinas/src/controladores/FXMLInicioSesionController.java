@@ -59,6 +59,10 @@ public class FXMLInicioSesionController implements Initializable {
           case 2:
             //alerta de usuario no encontrado
             alerta.alertaInfo("Acceso denegado", "Usuario no encontrado", "El usuario con el que intentas ingresar no existe");
+            break;
+          default:
+            //Comportamiento por default
+            alerta.alertaInfo("Acceso denegado", "Revisa los campos", "Ha habido algun error, revisa los campos");
         }
       }
     });
@@ -78,7 +82,7 @@ public class FXMLInicioSesionController implements Initializable {
    * @return regresa un int que indica la comprobacion de los campos
    */
   public int verificar() {
-    jugadorjpa.findJugadorEntities(); //Actualizacion de entidades en la base de datos
+    jugadores=jugadorjpa.findJugadorEntities(); //Actualizacion de entidades en la base de datos
     //for para comprobar uno a uno los datos de las entidades
     for (int i = 0; i < jugadores.size(); i++) {
       String nombre = jugadores.get(i).getNombreJugador(); //variable auxiliar para el nombre del jugador
@@ -105,6 +109,11 @@ public class FXMLInicioSesionController implements Initializable {
         stage.close();
 
         try {
+          /**
+          FXMLLoader loader= new FXMLLoader();
+          //agregamos el openStream (no se para que)
+          AnchorPane root =(AnchorPane)loader.load(getClass().getResource("Planillacaja.fxml").openStream());
+          */
           FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pantallas/FXMLMenu.fxml"));
           Parent root1 = (Parent) fxmlLoader.load();
           stage.setScene(new Scene(root1));

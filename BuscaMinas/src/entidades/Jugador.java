@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entidades;
 
 import java.io.Serializable;
@@ -21,6 +16,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
+import logica.Encriptar;
 
 /**
  *
@@ -61,7 +57,7 @@ public class Jugador implements Serializable {
   private Configuraciones configuraciones;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "jugador")
   private Partidasganadas partidasganadas;
-
+  
   public Jugador() {
   }
 
@@ -70,9 +66,10 @@ public class Jugador implements Serializable {
   }
 
   public Jugador(Integer idJugador, String nombreJugador, String contrasena, boolean genero, Date fechaNacimiento) {
+    Encriptar encript=new Encriptar();
     this.idJugador = idJugador;
     this.nombreJugador = nombreJugador;
-    this.contrasena = contrasena;
+    this.contrasena = encript.convertirSHA256(contrasena);
     this.genero = genero;
     this.fechaNacimiento = fechaNacimiento;
   }
@@ -90,7 +87,8 @@ public class Jugador implements Serializable {
   }
 
   public void setContrasena(String contrasena) {
-    this.contrasena = contrasena;
+    Encriptar encript=new Encriptar();
+    this.contrasena = encript.convertirSHA256(contrasena);
   }
 
   public boolean getGenero() {

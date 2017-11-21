@@ -11,11 +11,20 @@ public class Alerta {
 
 
 public void alertaInfo(String titulo, String cabeza, String mensaje){
+  Alert alert = new Alert(AlertType.WARNING);
+alert.setTitle(titulo);
+alert.setHeaderText(cabeza);
+alert.setContentText(mensaje);
+
+alert.showAndWait();
+}
+
+public void alertaOk(String titulo, String cabeza, String mensaje){
   Alert alert = new Alert(AlertType.INFORMATION);
 alert.setTitle(titulo);
 alert.setHeaderText(cabeza);
 alert.setContentText(mensaje);
 
 alert.showAndWait();
-}  
+}
 }
