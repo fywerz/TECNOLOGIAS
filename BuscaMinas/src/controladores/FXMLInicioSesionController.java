@@ -25,6 +25,7 @@ import logica.Encriptar;
  */
 public class FXMLInicioSesionController implements Initializable {
 //Inicializacion de variables con FXML
+
   @FXML
   Button btnIniciar;
   @FXML
@@ -41,8 +42,8 @@ public class FXMLInicioSesionController implements Initializable {
   @Override
   public void initialize(URL url, ResourceBundle rb) {
     /**
-     * Acciones a ejecutar cuando sea pulsado el boton Iniciar (Iniciar sesion) dependiendo el resultado del metodo
-     * verificar
+     * Acciones a ejecutar cuando sea pulsado el boton Iniciar (Iniciar sesion) dependiendo el
+     * resultado del metodo verificar
      */
     btnIniciar.setOnAction(new EventHandler<ActionEvent>() {
       @Override
@@ -66,7 +67,7 @@ public class FXMLInicioSesionController implements Initializable {
         }
       }
     });
-    
+
     /**
      * Accion del boton Crear que lleva a crear un nuevo usuario
      */
@@ -77,12 +78,14 @@ public class FXMLInicioSesionController implements Initializable {
       }
     });
   }
+
   /**
    * Metodo para verificar los datos introducidos en los campos de jugador y contraseña
+   *
    * @return regresa un int que indica la comprobacion de los campos
    */
   public int verificar() {
-    jugadores=jugadorjpa.findJugadorEntities(); //Actualizacion de entidades en la base de datos
+    jugadores = jugadorjpa.findJugadorEntities(); //Actualizacion de entidades en la base de datos
     //for para comprobar uno a uno los datos de las entidades
     for (int i = 0; i < jugadores.size(); i++) {
       String nombre = jugadores.get(i).getNombreJugador(); //variable auxiliar para el nombre del jugador
@@ -99,43 +102,42 @@ public class FXMLInicioSesionController implements Initializable {
     }
     return 2; //2 si el nombre de jugador no es encontrado
   }
-  
-  
-      /**
-       * Metodo para la invocacion del menu
-       */
-      private void menu() {
-        Stage stage = (Stage) btnIniciar.getScene().getWindow();
-        stage.close();
 
-        try {
-          /**
-          FXMLLoader loader= new FXMLLoader();
-          //agregamos el openStream (no se para que)
-          AnchorPane root =(AnchorPane)loader.load(getClass().getResource("Planillacaja.fxml").openStream());
-          */
-          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pantallas/FXMLMenu.fxml"));
-          Parent root1 = (Parent) fxmlLoader.load();
-          stage.setScene(new Scene(root1));
-          stage.show();
-        } catch (Exception e) {
-        }
-      }
+  /**
+   * Metodo para la invocacion del menu
+   */
+  private void menu() {
+    Stage stage = (Stage) btnIniciar.getScene().getWindow();
+    stage.close();
+
+    try {
+      /**
+       * FXMLLoader loader= new FXMLLoader(); //agregamos el openStream (no se para que) AnchorPane
+       * root =(AnchorPane)loader.load(getClass().getResource("Planillacaja.fxml").openStream());
+       */
+      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pantallas/FXMLMenu.fxml"));
+      Parent root1 = (Parent) fxmlLoader.load();
+      stage.setScene(new Scene(root1));
+      stage.show();
+    } catch (Exception e) {
+    }
+  }
+
   /**
    * Metodo para ir a la escena de crear cuenta
    */
-  public void crearCuenta(){
+  public void crearCuenta() {
     Stage stage = (Stage) btnIniciar.getScene().getWindow();
-        stage.close();
+    stage.close();
 
-        try {
-          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pantallas/FXMLCrearCuenta.fxml"));
-          Parent root1 = (Parent) fxmlLoader.load();
-          stage.setScene(new Scene(root1));
-          stage.show();
-        } catch (Exception e) {
-        }
-      
+    try {
+      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pantallas/FXMLCrearCuenta.fxml"));
+      Parent root1 = (Parent) fxmlLoader.load();
+      stage.setScene(new Scene(root1));
+      stage.show();
+    } catch (Exception e) {
+    }
+
   }
 
 }

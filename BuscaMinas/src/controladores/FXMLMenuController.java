@@ -30,28 +30,28 @@ public class FXMLMenuController implements Initializable {
   Button btnMejores;
   @FXML
   Button btnOpciones;
+
   @Override
   public void initialize(URL url, ResourceBundle rb) {
-  btnSalir.setOnAction(new EventHandler<ActionEvent>() {
-    @Override
-    public void handle(ActionEvent event) {
-    inicioSesion();
-    }
-  });
-  }  
-  
-  
-  public void inicioSesion(){
-    Stage stage = (Stage) btnSalir.getScene().getWindow();
-        stage.close();
+    btnSalir.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        inicioSesion();
+      }
+    });
+  }
 
-        try {
-          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pantallas/FXMLInicioSesion.fxml"));
-          Parent root1 = (Parent) fxmlLoader.load();
-          stage.setScene(new Scene(root1));
-          stage.show();
-        } catch (Exception e) {
-        }
-      
+  public void inicioSesion() {
+    Stage stage = (Stage) btnSalir.getScene().getWindow();
+    stage.close();
+
+    try {
+      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/pantallas/FXMLInicioSesion.fxml"));
+      Parent root1 = (Parent) fxmlLoader.load();
+      stage.setScene(new Scene(root1));
+      stage.show();
+    } catch (Exception e) {
+    }
+
   }
 }
